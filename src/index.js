@@ -8,10 +8,12 @@ import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 import usersReducer from './reducers/users.js'
 import currentUser from './reducers/currentUser.js'
+import login from './reducers/login.js'
 
 const reducer = combineReducers({
     user: usersReducer,
-    currentUser
+    currentUser,
+    login
 })
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
