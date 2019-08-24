@@ -8,7 +8,6 @@ import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 import usersReducer from './reducers/users.js'
 
-
 const reducer = combineReducers({
     user: usersReducer,
 })
