@@ -1,7 +1,14 @@
 import React from 'react';
 import BookcaseContainer from './components/BookcaseContainer.js'
+import { getMyBookcases } from './actions/bookcases.js'
+import { connect } from 'react-redux'
 
-function App() {
+class App extends React.Component {
+
+  componentDidMount() {
+    this.props.getMyBookcases()
+  }
+  render(){
   return (
     <div className="App">
       <h1> Bookcase Builder </h1>
@@ -14,6 +21,7 @@ function App() {
         <h3>New Book Option</h3>
     </div>
   );
+  }
 }
 
-export default App;
+export default (connect(null, { getMyBookcases })(App));
