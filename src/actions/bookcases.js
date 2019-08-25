@@ -19,7 +19,7 @@ export const getMyBookcases = () => {
             if (response.error) {
                 alert(response.error)
             } else {
-                dispatch(myBookcases([]))
+                dispatch(myBookcases(response.data))
             }
         })
     }
