@@ -1,13 +1,11 @@
 import React from 'react';
+import BookcaseContainer from './components/BookcaseContainer.js'
 
 function App() {
   return (
     <div className="App">
       <h1> Bookcase Builder </h1>
-      <h2> To be built: Bookcase Container </h2>
-        <ul>
-          <li>Show all bookcases</li>
-        </ul>
+      < BookcaseContainer />
         <h3> New Bookcase Option </h3>
       <h2> To be built: Books Container </h2>
         <ul>
