@@ -1,5 +1,5 @@
 import React from 'react';
-import BookcaseContainer from './components/BookcaseContainer.js'
+import BookcasesContainer from './components/BookcasesContainer.js'
 import { getMyBookcases } from './actions/bookcases.js'
 import { connect } from 'react-redux'
 
@@ -12,7 +12,7 @@ class App extends React.Component {
   return (
     <div className="App">
       <h1> Bookcase Builder </h1>
-      < BookcaseContainer />
+      < BookcasesContainer />
         <h3> New Bookcase Option </h3>
       <h2> To be built: Books Container </h2>
         <ul>
