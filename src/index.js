@@ -8,10 +8,12 @@ import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 import usersReducer from './reducers/users.js'
 import myBookcases from './reducers/bookcases.js'
+import bookcaseForm from './reducers/bookcaseForm.js'
 
 const reducer = combineReducers({
     user: usersReducer,
-    myBookcases
+    myBookcases,
+    bookcaseForm
 })
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
