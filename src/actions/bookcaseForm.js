@@ -33,6 +33,10 @@ export const buildBookcase = bookcaseData => {
             body: JSON.stringify(sendableBookcaseData)
         })
         .then(response => response.json())
-        .then(console.log)
+        .then(response => {
+            if (response.error) {
+                alert(response.error)
+            } else { dispatch(addBookcase(response.data) )}
+        })
     }
 }
