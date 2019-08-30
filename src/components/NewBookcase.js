@@ -13,7 +13,7 @@ const BookcaseForm = ({ formData, history, updateBookcaseForm, buildBookcase }) 
 
     const handleSubmit = event => {
         event.preventDefault()
-        buildBookcase(formData)
+        buildBookcase(formData, history)
     }
 
     return (
