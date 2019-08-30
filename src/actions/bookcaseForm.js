@@ -18,7 +18,7 @@ export const addBookcase = bookcase => {
     }
 }
 
-export const buildBookcase = bookcaseData => {
+export const buildBookcase = (bookcaseData, history) => {
     return dispatch => {
         const sendableBookcaseData = {
             bookcase: {
@@ -36,7 +36,8 @@ export const buildBookcase = bookcaseData => {
         .then(response => {
             if (response.error) {
                 alert(response.error)
-            } else { dispatch(addBookcase(response.data) )}
+            } else { dispatch(addBookcase(response.data))
+            history.push(`/bookcases/${response.data.id}`)}
         })
     }
 }
