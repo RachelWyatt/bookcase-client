@@ -19,8 +19,8 @@ class App extends React.Component {
       <div className="App">
           <NavBar />
           <h1> Bookcase Builder </h1>
-          < BookcasesContainer />
           <Switch>
+            <Route exact path= '/bookcases' component={ BookcasesContainer }/>
             <Route exact path= '/bookcases/new' component={ NewBookcase }/>
             <Route exact path= '/bookcases/:id' render={ props =>
               { const bookcase = myBookcases.find( bookcase => bookcase.id === props.match.params.id )
