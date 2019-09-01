@@ -7,7 +7,7 @@ export const updateBookcaseForm = (name, value) => {
 
 export const resetBookcaseForm = () => {
     return {
-        type: "RESET_SIGNUP_FORM"
+        type: "RESET_BOOKCASE_FORM",
     }
 }
 
@@ -36,8 +36,10 @@ export const buildBookcase = (bookcaseData, history) => {
         .then(response => {
             if (response.error) {
                 alert(response.error)
-            } else { dispatch(addBookcase(response.data))
-            history.push(`/bookcases/${response.data.id}`)}
+            } else { 
+                dispatch(addBookcase(response.data))
+                dispatch(resetBookcaseForm())
+                history.push(`/bookcases/${response.data.id}`)}
         })
     }
 }
