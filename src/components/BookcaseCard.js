@@ -2,9 +2,13 @@ import React from 'react'
 
 
 const BookcaseCard = ({bookcase}) => {
-    const books = bookcase.attributes.books.map(b => (<li key={b.id}>{b.title}</li>))
+    const books = bookcase.attributes.books.map(b => (
+        <div class="book book-green" key={b.id}>
+            <h2>{b.title}</h2>
+            <h3>{b.author}</h3>
+        </div>))
     return (
-        <div>
+        <div class = "bookshelf">
             {books}
         </div>
     )
