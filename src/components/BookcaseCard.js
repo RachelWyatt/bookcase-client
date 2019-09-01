@@ -2,8 +2,11 @@ import React from 'react'
 
 
 const BookcaseCard = ({bookcase}) => {
+    console.log(bookcase)
     return (
-        <li> I'll show the books</li>
+        <div>
+            <p>{bookcase.attributes.name}</p>
+        </div>
     )
 }
 
