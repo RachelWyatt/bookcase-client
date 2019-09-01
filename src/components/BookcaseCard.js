@@ -2,10 +2,10 @@ import React from 'react'
 
 
 const BookcaseCard = ({bookcase}) => {
-    console.log(bookcase)
+    const books = bookcase.attributes.books.map(b => (<li key={b.id}>{b.title}</li>))
     return (
         <div>
-            <p>{bookcase.attributes.name}</p>
+            {books}
         </div>
     )
 }
