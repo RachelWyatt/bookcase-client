@@ -5,7 +5,7 @@ import NewBookcase from './components/NewBookcase.js'
 import NavBar from './components/NavBar.js'
 import { getMyBookcases } from './actions/bookcases.js'
 import { connect } from 'react-redux'
-import { BrowserRouter as Router, Route} from 'react-router-dom'
+import { Route, withRouter, Switch} from 'react-router-dom'
 
 class App extends React.Component {
 
@@ -13,19 +13,25 @@ class App extends React.Component {
     this.props.getMyBookcases()
   }
   render(){
+    const {myBookcases} = this.props
   return (
-    <Router>
+
       <div className="App">
           <NavBar />
           <h1> Bookcase Builder </h1>
           < BookcasesContainer />
-          <Route exact path= '/bookcases/new' component={ NewBookcase }/>
-          <Route exact path= '/bookcases/:id' render={ props =>
-            {return <BookcaseCard {...props} />
-          }
-          }/>
+          <Switch>
+            <Route exact path= '/bookcases/new' component={ NewBookcase }/>
+            <Route exact path= '/bookcases/:id' render={ props =>
+              { const bookcase = myBookcases.find( bookcase => bookcase.id === props.match.params.id )
+                
+                return <BookcaseCard bookcase={bookcase} {...props} />
+            }
+            
+            }/>
+          </Switch>
       </div>
-    </Router>
+
   );
   }
 }
@@ -36,4 +42,4 @@ const mapStateToProps = state => {
   })
 }
 
-export default (connect(mapStateToProps, { getMyBookcases })(App));
+export default withRouter(connect(mapStateToProps, { getMyBookcases })(App));
