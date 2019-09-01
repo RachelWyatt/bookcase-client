@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import BookcaseCard from './BookcaseCard.js'
+import { Link } from 'react-router-dom'
 
 const Bookcases = props => {
-      const bookcaseCards = props.bookcases.map(b => <BookcaseCard bookcase={b} key={b.id}/>)
+      const bookcaseCards = props.bookcases.map(b => <li><Link to={`/bookcases/${b.id}`}>{b.attributes.name}</Link></li>)
       return (
         bookcaseCards
       )
