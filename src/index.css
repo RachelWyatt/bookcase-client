@@ -11,3 +11,53 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+html {
+  height: 100%;
+}
+
+.bookshelf {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  border: 10px #A87328;
+  overflow: hidden;
+}
+
+.book {
+  height: 200px;
+  width: 40px;
+  float: left;
+  color: white;
+  font-size: 0.9em;
+  font-family: Verdana, sans-serif;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  transition: transform 0.4s ease;
+}
+
+.book:hover {
+  transform: scale(1.05);
+}
+
+.book-green {
+  background-color: darkgreen;
+  border-left: 2px solid lighten(darkgreen, 4%);
+  border-right: 2px solid darken(darkgreen, 4%);
+}
+
+.book h2 {
+  padding: 0;
+  font-size: 1em;
+  transform-origin: 0% 0%;
+  transform: rotate(90deg) translateY(-35px);
+  width: 170px;
+}
+
+.book h3 {
+  padding: 0;
+  font-size: 0.7em;
+  transform-origin: 0 0;
+  transform: rotate(90deg) translateY(-15px) translateX(-20px);
+  width: 150px;
+}
