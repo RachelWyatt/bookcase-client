@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const BookcaseCard = ({bookcase}) => {
+const BooksContainer = ({bookcase}) => {
     const books = bookcase.attributes.books.map(b => (
         <div class="book " key={b.id} style={
             {backgroundColor: `#${b.spine_color}`}
@@ -20,4 +20,4 @@ const BookcaseCard = ({bookcase}) => {
     )
 }
 
-export default BookcaseCard
+export default BooksContainer

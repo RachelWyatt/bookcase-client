@@ -1,6 +1,6 @@
 import React from 'react';
 import BookcasesContainer from './components/BookcasesContainer.js'
-import BookcaseCard from './components/BookcaseCard.js'
+import BooksContainer from './components/BooksContainer.js'
 import NewBookcase from './components/NewBookcase.js'
 import BookForm from './components/BookForm.js'
 import NavBar from './components/NavBar.js'
@@ -25,7 +25,7 @@ class App extends React.Component {
             <Route exact path= '/bookcases/new' component={ NewBookcase }/>
             <Route exact path= '/bookcases/:id' render={ props =>
               { const bookcase = myBookcases.find( bookcase => bookcase.id === props.match.params.id )
-                return <BookcaseCard bookcase={bookcase} {...props} />
+                return <BooksContainer bookcase={bookcase} {...props} />
             }
             }/>
             <Route exact path= '/bookcases/:id/books/new' component={BookForm} />

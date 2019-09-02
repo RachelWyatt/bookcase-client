@@ -15,7 +15,7 @@ export default (state=initialState, action) => {
         case 'RESET_BOOK_FORM':
             return initialState
         case 'ADD_BOOK':
-            return state.myBookcases.books.concat(action.books)
+            return state.myBookcases.books.concat(action.book)
         default:
             return state
     }
