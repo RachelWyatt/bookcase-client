@@ -1,7 +1,7 @@
 import React from 'react';
 import BookcasesContainer from './components/BookcasesContainer.js'
 import BooksContainer from './components/BooksContainer.js'
-import NewBookcase from './components/NewBookcase.js'
+import NewBookcase from './components/BookcaseForm.js'
 import BookForm from './components/BookForm.js'
 import NavBar from './components/NavBar.js'
 import { getMyBookcases } from './actions/bookcases.js'
