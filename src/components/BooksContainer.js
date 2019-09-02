@@ -17,7 +17,7 @@ const BooksContainer = ({bookcase}) => {
             <div class = "bookshelf">
                 {books} <br/>
             </div>
-            <BookForm/>
+            <BookForm bookcase={bookcase}/>
         </div>
     )
 }
