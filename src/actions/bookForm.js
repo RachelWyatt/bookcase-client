@@ -11,7 +11,7 @@ export const resetBookForm = () => {
     }
 }
 
-export const addBook = (book, bookcaseId) => {
+export const addBook = (book, bookcaseId, history) => {
     return dispatch => {
         const sendableBookData = {
             book: {
@@ -36,7 +36,9 @@ export const addBook = (book, bookcaseId) => {
                 dispatch({
                     type: "ADD_BOOK",
                     payload: response
-                })}
+                })
+                history.push(`/bookcases/${bookcaseId}`)
+        }
         })
     }
 }
