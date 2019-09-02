@@ -10,3 +10,10 @@ export const resetBookForm = () => {
         type: "RESET_BOOK_FORM",
     }
 }
+
+export const addBook = book => {
+    return {
+        type: "ADD_BOOK",
+        book
+    }
+}
