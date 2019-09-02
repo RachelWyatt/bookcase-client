@@ -3,7 +3,9 @@ import React from 'react'
 
 const BookcaseCard = ({bookcase}) => {
     const books = bookcase.attributes.books.map(b => (
-        <div class="book book-green" key={b.id}>
+        <div class="book " key={b.id} style={
+            {backgroundColor: `#${b.spine_color}`}
+            } >
             <h2>{b.title}</h2>
             <h3>{b.author}</h3>
         </div>))
