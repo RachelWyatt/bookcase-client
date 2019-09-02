@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { updateBookForm } from '../actions/bookForm.js'
 
-const BookForm = ( {formData, updateBookForm}) => {
+const BookForm = ( {formData, updateBookForm, bookcaseId}) => {
     const { title, author, pageCount, spineColor } = formData
     const handleChange = event => {
         const {name, value} = event.target
@@ -20,8 +20,10 @@ const BookForm = ( {formData, updateBookForm}) => {
     }
 
     const mapStateToProps = state => {
+        const bookcaseId = state.myBookcases.id
         return {
-          formData: state.bookForm
+          formData: state.bookForm,
+          bookcaseId: bookcaseId
         }
       }
       
