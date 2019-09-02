@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { updateBookForm } from '../actions/bookForm.js'
-import { addBook } from '../actions/books.js'
+import { addBook } from '../actions/bookForm.js'
 
 const BookForm = ( {formData, updateBookForm, bookcaseId, addBook}) => {
     const { title, author, pageCount, spineColor } = formData

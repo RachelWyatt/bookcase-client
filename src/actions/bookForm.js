@@ -11,6 +11,13 @@ export const resetBookForm = () => {
     }
 }
 
+export const addBook = ({book}) => {
+    return{
+        type: "ADD_BOOK",
+        book
+    }
+}
+
 
 export const createBook = (formData) => {
     return dispatch => {
