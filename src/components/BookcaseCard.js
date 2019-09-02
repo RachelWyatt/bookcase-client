@@ -15,7 +15,7 @@ const BookcaseCard = ({bookcase}) => {
             <div class = "bookshelf">
                 {books} <br/>
             </div>
-            <Link to={`/bookcases/${bookcase.id}/books/new`}> Add a Book to this Bookcase </Link>
+            <Link to={`/bookcases/${bookcase.id}/books/new`} class="myButton"> Add a Book to this Bookcase </Link>
         </div>
     )
 }
