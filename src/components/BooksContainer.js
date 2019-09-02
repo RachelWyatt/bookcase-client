@@ -1,4 +1,5 @@
 import React from 'react'
+import BookForm from './BookForm.js'
 import { Link } from 'react-router-dom'
 
 const BooksContainer = ({bookcase}) => {
@@ -16,7 +17,7 @@ const BooksContainer = ({bookcase}) => {
             <div class = "bookshelf">
                 {books} <br/>
             </div>
-            <Link to={`/bookcases/${bookcase.id}/books/new`} class="myButton"> Add a Book to this Bookcase </Link>
+            <BookForm/>
         </div>
     )
 }

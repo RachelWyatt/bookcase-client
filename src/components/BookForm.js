@@ -19,6 +19,8 @@ class BookForm extends React.Component {
     }
     render() {
     return (
+        <div>
+        <h2>Add a Book</h2>
         < form onSubmit={this.handleSubmit}>
             <input placeholder="Title" name="title" type="text" onChange={this.handleChange}/> <br/>
             <input placeholder="Author" name="author" type="text" onChange={this.handleChange}/><br/>
@@ -26,9 +28,10 @@ class BookForm extends React.Component {
             <input placeholder="Spine color" name="spineColor" type="text" onChange={this.handleChange}/><br/>
             <input type="submit" value="Submit"/>
         </form>
+        </div>
     )
     }
 }
       
 
-export default connect(null, { addBook })(BookForm)
+export default BookForm

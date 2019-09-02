@@ -28,7 +28,6 @@ class App extends React.Component {
                 return <BooksContainer bookcase={bookcase} {...props} />
             }
             }/>
-            <Route exact path= '/bookcases/:id/books/new' component={BookForm} />
           </Switch>
       </div>
 
