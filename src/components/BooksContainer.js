@@ -12,6 +12,7 @@ const BooksContainer = ({bookcase}) => {
         </div>))
     return (
         <div>
+            <h2>{bookcase.attributes.name}</h2>
             <div class = "bookshelf">
                 {books} <br/>
             </div>
