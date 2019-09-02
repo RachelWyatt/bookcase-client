@@ -1,15 +1,20 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { updateBookForm } from '../actions/bookForm.js'
+import { addBook } from '../actions/books.js'
 
-const BookForm = ( {formData, updateBookForm, bookcaseId}) => {
+const BookForm = ( {formData, updateBookForm, bookcaseId, addBook}) => {
     const { title, author, pageCount, spineColor } = formData
     const handleChange = event => {
         const {name, value} = event.target
         updateBookForm(name, value)
     }
+    const handleSubmit = event => {
+        event.preventDefault()
+        addBook(formData)
+    }
     return (
-        < form>
+        < form onSubmit={handleSubmit}>
             <input placeholder="Title" name="title" type="text" onChange={handleChange}/> <br/>
             <input placeholder="Author" name="author" type="text" onChange={handleChange}/><br/>
             <input placeholder="Page count" name="pageCount" type="integer" onChange={handleChange}/><br/>
@@ -28,4 +33,4 @@ const BookForm = ( {formData, updateBookForm, bookcaseId}) => {
       }
       
 
-export default connect(mapStateToProps, { updateBookForm })(BookForm)
+export default connect(mapStateToProps, { updateBookForm, addBook })(BookForm)
