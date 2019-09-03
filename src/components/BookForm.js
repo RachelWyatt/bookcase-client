@@ -16,7 +16,7 @@ class BookForm extends React.Component {
     }
     handleSubmit = event => {
         event.preventDefault()
-        this.props.addBook(this.state, this.props.bookcase.id, this.props.history)
+        this.props.addBook(this.state, this.props.bookcaseId)
     }
     render() {
     return (
