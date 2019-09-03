@@ -26,7 +26,7 @@ class App extends React.Component {
             <Route exact path= '/bookcases/:id' render={ (routerProps) =>
                <BooksContainer {...routerProps} bookcases={this.props.myBookcases} />
             }/>
-            <Route exact path= '/bookcases/:id/books/new' component={ BookForm }/>
+            <Route exact path= '/bookcases/:id/books/new' render={ (routerProps) => <BookForm {...routerProps}/> }/>
           </Switch>
       </div>
 
