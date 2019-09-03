@@ -23,11 +23,10 @@ class App extends React.Component {
           <Switch>
             <Route exact path= '/bookcases' component={ BookcasesContainer }/>
             <Route exact path= '/bookcases/new' component={ NewBookcase }/>
-            <Route exact path= '/bookcases/:id' render={ props =>
-              { const bookcase = myBookcases.find( bookcase => bookcase.id === props.match.params.id )
-                return <BooksContainer bookcase={bookcase} {...props} />
-            }
+            <Route exact path= '/bookcases/:id' render={ (routerProps) =>
+               <BooksContainer {...routerProps} bookcases={this.props.myBookcases} />
             }/>
+            <Route exact path= '/bookcases/:id/books/new' component={ BookForm }/>
           </Switch>
       </div>
 
