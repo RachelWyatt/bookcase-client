@@ -2,8 +2,9 @@ import React from 'react'
 import BookForm from './BookForm.js'
 import { Link } from 'react-router-dom'
 
-class BooksContainer extends React.Component {
-     books = this.props.bookcase.attributes.books.map(b => (
+const BooksContainer = (props) => {
+    const bookcase = props.bookcases.filter( bookcase => bookcase.id === props.match.params.id)[0]
+    const books = bookcase.attributes.books.map(b => (
         <div class="book " key={b.id} style={
             {backgroundColor: `#${b.spine_color}`}
             } >
@@ -11,17 +12,17 @@ class BooksContainer extends React.Component {
             <h3>{b.author}</h3>
 
         </div>))
-        render(){
+
     return (
         <div>
-            <h2>{this.props.bookcase.attributes.name}</h2>
+            <h2>{bookcase.attributes.name}</h2>
             <div class = "bookshelf">
-                {this.books} <br/>
+                {books} <br/>
             </div>
-            <BookForm bookcase={this.props.bookcase} history={this.props.history} />
+            <BookForm bookcase={bookcase} bookcaseId = {bookcase.id} />
         </div>
     )
 }
-}
+
 
 export default BooksContainer
