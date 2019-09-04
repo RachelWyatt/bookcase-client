@@ -14,7 +14,6 @@ class App extends React.Component {
     this.props.getMyBookcases()
   }
   render(){
-    const {myBookcases} = this.props
   return (
 
       <div className="App">

@@ -37,7 +37,6 @@ export const addBook = (book, bookcaseId, history) => {
                     type: "ADD_BOOK",
                     payload: response
                 })
-                history.push(`/bookcases/${bookcaseId}`)
         }
         })
     }
