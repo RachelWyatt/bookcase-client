@@ -19,7 +19,7 @@ class App extends React.Component {
 
       <div className="App">
           <NavBar />
-          <h1> Bookcase Builder </h1>
+          <h1 class="ml-2"> Virtual Bookcase </h1>
           <Switch>
             <Route exact path= '/bookcases' component={ BookcasesContainer }/>
             <Route exact path= '/bookcases/new' component={ NewBookcase }/>
