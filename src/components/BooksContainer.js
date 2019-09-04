@@ -6,16 +6,16 @@ const BooksContainer = (props) => {
 if (props.bookcases.length > 1) {
     const bookcase = props.bookcases.filter( bookcase => bookcase.id === props.match.params.id)[0]
     const books = bookcase.attributes.books.map(b => (
-        <div class="book " key={b.id} style={
+        <div className="book " key={b.id} style={
             {backgroundColor: `#${b.spine_color}`}
             } >
-            <h2>{b.title}</h2>
-            <h3>{b.author}</h3>
+            <div className="book-title">{b.title}</div>
+            <div className="book-author">{b.author}</div>
 
         </div>))
             return (
                 <div>
-                    <h2>{bookcase.attributes.name}</h2>
+                    <h2 class="ml-5">{bookcase.attributes.name}</h2>
                     <div class = "bookshelf">
                         {books} <br/>
                     </div>
