@@ -18,8 +18,12 @@ const BookcaseForm = ({ formData, history, updateBookcaseForm, buildBookcase }) 
 
     return (
         < form onSubmit={handleSubmit}>
-            <input placeholder="Name" value={name} name="name" type="text" onChange={handleInputChange}/>
-            <input type="submit" value="Submit"/>
+            <div class="form-group row">
+                <div class="col-sm-6 ml-5">
+                    <input placeholder="Bookcase Name" class="form-control" value={name} name="name" type="text" onChange={handleInputChange}/>
+                </div>
+                <input type="submit" class="btn btn-outline-dark" value="Submit"/>
+            </div>
         </form>
     )
     }
