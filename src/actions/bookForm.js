@@ -11,17 +11,25 @@ export const resetBookForm = () => {
     }
 }
 
-export const addBook = (book, bookcaseId, history) => {
+export const addBook = book => {
+    return {
+        type: "ADD_BOOK",
+        book
+    }
+}
+
+export const createBook = (formData, bookcaseID, history) => {
     return dispatch => {
+        debugger
         const sendableBookData = {
-            book: {
-                title: book.title,
-                author: book.author,
-                page_count: book.pageCount,
-                spine_color: book.spineColor,   
-            }
+            title: formData.title,
+            author: formData.author,
+            page_count: formData.pageCount,
+            spine_color: formData.spineColor,
+            bookcase_id: formData.bookcaseID   
+            
         }
-        return fetch(`http://localhost:3001/api/v1/bookcases/${bookcaseId}/books`, {
+        return fetch(`http://localhost:3001/api/v1/bookcases/${bookcaseID}/books`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -33,11 +41,9 @@ export const addBook = (book, bookcaseId, history) => {
             if (response.error) {
                 alert(response.error)
             } else { 
-                dispatch({
-                    type: "ADD_BOOK",
-                    payload: response
-                })
-                history.push(`/bookcases/${bookcaseId}`)
+                console.log(response)
+                dispatch(createBook(response.data))
+                history.push(`/bookcases/${bookcaseID}`)
         }
         })
     }
