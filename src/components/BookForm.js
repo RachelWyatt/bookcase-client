@@ -1,25 +1,25 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addBook } from '../actions/bookForm.js'
-
-class BookForm extends React.Component {
-    state = {
-        title: "",
-        author: "",
-        pageCount: "",
-        spineColor: "",
-    }
-    handleChange = event => {
-        this.setState({
-            [event.target.name]: event.target.value
-          })
-    }
-    handleSubmit = event => {
-        event.preventDefault()
-        this.props.addBook(this.state, this.props.bookcaseId, this.props.history)
-    }
-    render() {
-    return (
+//
+const BookForm = () => (
+//    state = {
+//        title: "",
+//        author: "",
+//        pageCount: "",
+//        spineColor: "",
+//    }
+//    handleChange = event => {
+//        this.setState({
+//            [event.target.name]: event.target.value
+//          })
+//    }
+//    handleSubmit = event => {
+//        event.preventDefault()
+//        this.props.addBook(this.state, this.props.bookcaseId, this.props.history)
+//    }
+//    
+//    
         <div class="ml-5">
         <h2>Add a Book</h2>
         < form onSubmit={this.handleSubmit}>
@@ -52,8 +52,7 @@ class BookForm extends React.Component {
         </div>
         
     )
-    }
-}
+    
       
 
 export default connect(null, {addBook})(BookForm)
