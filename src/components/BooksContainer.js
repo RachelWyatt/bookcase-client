@@ -3,11 +3,18 @@ import BookForm from './BookForm.js'
 import { Link } from 'react-router-dom'
 
 const BooksContainer = (props) => {
+    
+    const determineBookWidth = (page_count) => {
+        return page_count/10 + `px`
+    }
+
 if (props.bookcases.length > 1) {
+
     const bookcase = props.bookcases.filter( bookcase => bookcase.id === props.match.params.id)[0]
     const books = bookcase.attributes.books.map(b => (
         <div className="book " key={b.id} style={
-            {backgroundColor: `#${b.spine_color}`}
+            {backgroundColor: `#${b.spine_color}`,
+            width: determineBookWidth(b.page_count)}
             } >
             <div className="book-title">{b.title}</div>
             <div className="book-author">{b.author}</div>
