@@ -5,13 +5,8 @@ export default (state = {bookcases: []}, action) => {
         case "ADD_BOOKCASE":
             return state.concat(action.bookcase)
         case "ADD_BOOK": 
-            return {...state, bookcases: state.map(bookcase => {
-                if (bookcase.id === action.payload.id) {
-                    return action.payload
-                } else {
-                    return bookcase
-                }
-            })}            
+            
+            return state.myBookcases.concat(action.book)        
         default: 
             return state
     }
