@@ -55,17 +55,19 @@ html {
 }
 
 .book-title {
+  float: left;
   padding-left: 1em;
   font-size: 1em;
-  transform-origin: 0% 0%;
-  transform: rotate(90deg) translateY(-35px);
+  transform-origin: left top 0;
+  transform: rotate(90deg) translateY(-40px) ;
   width: 170px;
 }
 
 .book-author {
+  float: left;
   padding-left: 1em;
   font-size: 0.7em;
-  transform-origin: 0 0;
+  transform-origin: left top 0;
   transform: rotate(90deg) translateY(-15px) translateX(-20px);
   width: 150px;
 }
