@@ -3,7 +3,7 @@ export default (state = [], action) => {
         case "SET_MY_BOOKCASES":
             return action.bookcases
         case "ADD_BOOKCASE":
-            return  [...state, action.book]
+            return  [...state, action.bookcase]
         case "ADD_BOOK": 
         //iterate through all bookcases I have, and replace bookcase ID that matches
 
