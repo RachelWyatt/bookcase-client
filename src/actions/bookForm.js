@@ -20,7 +20,7 @@ export const addBook = book => {
 
 export const createBook = (formData, bookcaseID, history) => {
     return dispatch => {
-        debugger
+        
         const sendableBookData = {
             title: formData.title,
             author: formData.author,
@@ -42,7 +42,7 @@ export const createBook = (formData, bookcaseID, history) => {
                 alert(response.error)
             } else { 
                 console.log(response)
-                dispatch(createBook(response.data))
+                dispatch(addBook(response.data))
                 history.push(`/bookcases/${bookcaseID}`)
         }
         })
