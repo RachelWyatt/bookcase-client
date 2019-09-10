@@ -2,14 +2,15 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { createBook, addBook, updateBookForm } from '../actions/bookForm.js'
 
-const BookForm = ({formData, history, updateBookForm, createBook}) => {
-    const bookcaseID = 1
+const BookForm = ({formData, history, updateBookForm, createBook, bookcaseID}) => {
+    
     const handleChange = event => {
         event.preventDefault()
         const {name, value} = event.target
        updateBookForm(name, value)
     }
     const handleSubmit = event => {
+        console.log(bookcaseID)
         event.preventDefault()
         createBook(formData, bookcaseID, history)
     }
@@ -52,7 +53,6 @@ const BookForm = ({formData, history, updateBookForm, createBook}) => {
 const mapStatetoProps = state => {
     return {
         formData: state.bookForm
-       // bookcaseID: state.myBookcases.id
     }
 }
 

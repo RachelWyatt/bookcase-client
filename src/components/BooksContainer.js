@@ -9,7 +9,7 @@ const BooksContainer = (props) => {
     }
 
 if (props.bookcases.length > 1) {
-
+    console.log(props)
     const bookcase = props.bookcases.filter( bookcase => bookcase.id === props.match.params.id)[0]
     const books = bookcase.attributes.books.map(b => (
         <div className="book " key={b.id} style={
@@ -26,7 +26,7 @@ if (props.bookcases.length > 1) {
                     <div class = "bookshelf">
                         {books} <br/>
                     </div>
-                    <BookForm bookcase={bookcase} bookcaseId = {bookcase.id} history={props.history} />
+                    <BookForm bookcase={bookcase} bookcaseID = {bookcase.id} history={props.history} />
                 </div>
             )
 } else return <p>Loading...</p>
