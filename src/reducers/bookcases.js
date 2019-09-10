@@ -1,17 +1,13 @@
-export default (state = {bookcases: []}, action) => {
+export default (state = [], action) => {
     switch(action.type) {
         case "SET_MY_BOOKCASES":
             return action.bookcases
         case "ADD_BOOKCASE":
-            return state.concat(action.bookcase)
+            return  [...state, action.bookcase]
         case "ADD_BOOK": 
-            return {...state, bookcases: state.map(bookcase => {
-                if (bookcase.id === action.payload.id) {
-                    return action.payload
-                } else {
-                    return bookcase
-                }
-            })}            
+        //iterate through all bookcases I have, and replace bookcase ID that matches
+
+            return state.map(b => b.id === action.book.id ? action.book : b)
         default: 
             return state
     }

@@ -5,16 +5,28 @@ import { Link } from 'react-router-dom'
 const BooksContainer = (props) => {
     
     const determineBookWidth = (page_count) => {
-        return page_count/10 + `px`
+        if (page_count > 200) {
+            return page_count/10 + `px`
+        } else {return `40px`}
+        
+    }
+
+    const determineFontSize = (title) => {
+        if (title.length > 16) {
+            return `8pt`
+        } else {return `12pt`}
+        
     }
 
 if (props.bookcases.length > 1) {
-
+    console.log(props)
     const bookcase = props.bookcases.filter( bookcase => bookcase.id === props.match.params.id)[0]
     const books = bookcase.attributes.books.map(b => (
         <div className="book " key={b.id} style={
             {backgroundColor: `#${b.spine_color}`,
-            width: determineBookWidth(b.page_count)}
+            width: determineBookWidth(b.page_count),
+            fontSize: determineFontSize(b.title),
+        }
             } >
             <div className="book-title">{b.title}</div>
             <div className="book-author">{b.author}</div>
@@ -26,7 +38,7 @@ if (props.bookcases.length > 1) {
                     <div class = "bookshelf">
                         {books} <br/>
                     </div>
-                    <BookForm bookcase={bookcase} bookcaseId = {bookcase.id} history={props.history} />
+                    <BookForm bookcase={bookcase} bookcaseID = {bookcase.id} history={props.history} />
                 </div>
             )
 } else return <p>Loading...</p>
