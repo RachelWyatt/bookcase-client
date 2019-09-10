@@ -5,7 +5,10 @@ import { Link } from 'react-router-dom'
 const BooksContainer = (props) => {
     
     const determineBookWidth = (page_count) => {
-        return page_count/10 + `px`
+        if (page_count > 50) {
+            return page_count/10 + `px`
+        } else {return `40px`}
+        
     }
 
 if (props.bookcases.length > 1) {
@@ -14,7 +17,8 @@ if (props.bookcases.length > 1) {
     const books = bookcase.attributes.books.map(b => (
         <div className="book " key={b.id} style={
             {backgroundColor: `#${b.spine_color}`,
-            width: determineBookWidth(b.page_count)}
+            width: determineBookWidth(b.page_count),
+        }
             } >
             <div className="book-title">{b.title}</div>
             <div className="book-author">{b.author}</div>

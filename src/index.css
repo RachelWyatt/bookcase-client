@@ -34,7 +34,6 @@ html {
 
 .book {
   height: 200px;
-  width: 40px;
   float: left;
   color: white;
   font-size: 0.9em;
@@ -48,11 +47,6 @@ html {
   transform: scale(1.05);
 }
 
-.book-green {
-  background-color: darkgreen;
-  border-left: 2px solid lighten(darkgreen, 4%);
-  border-right: 2px solid darken(darkgreen, 4%);
-}
 
 .book-title {
   float: left;
