@@ -13,24 +13,24 @@ class App extends React.Component {
   componentDidMount() {
     this.props.getMyBookcases()
   }
+
   render(){
-    const {myBookcases} = this.props
-  return (
-
-      <div className="App">
-          <NavBar />
-          <h1 class="ml-2"> Virtual Bookcase </h1>
-          <Switch>
-            <Route exact path= '/bookcases' component={ BookcasesContainer }/>
-            <Route exact path= '/bookcases/new' component={ NewBookcase }/>
-            <Route exact path= '/bookcases/:id' render={ (routerProps) =>
-               <BooksContainer {...routerProps} bookcases={this.props.myBookcases} />
-            }/>
-            <Route exact path= '/bookcases/:id/books/new' render={ (routerProps) => <BookForm {...routerProps}/> }/>
-          </Switch>
-      </div>
-
-  );
+    return (
+        <div className="App">
+            <NavBar />
+            <h1 class="ml-2"> Virtual Bookcase </h1>
+            <Switch>
+              <Route exact path= '/bookcases' component={ BookcasesContainer }/>
+              <Route exact path= '/bookcases/new' component={ NewBookcase }/>
+              <Route exact path= '/bookcases/:id' render={ (routerProps) =>
+                <BooksContainer {...routerProps} bookcases={this.props.myBookcases} />
+              }/>
+              <Route exact path= '/bookcases/:id/books/new' render={ (routerProps) => 
+                <BookForm {...routerProps}/> 
+              }/>
+            </Switch>
+        </div>
+    );
   }
 }
 
