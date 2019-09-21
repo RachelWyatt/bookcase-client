@@ -18,7 +18,7 @@ class App extends React.Component {
     return (
         <div className="App">
             <NavBar />
-            <h1 class="ml-2"> Virtual Bookcase </h1>
+            <h1 className="ml-2"> Virtual Bookcase </h1>
             <Switch>
               <Route exact path= '/bookcases' component={ BookcasesContainer }/>
               <Route exact path= '/bookcases/new' component={ NewBookcase }/>

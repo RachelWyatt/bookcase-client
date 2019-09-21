@@ -22,8 +22,8 @@ const Books = (props) => {
             
                 return (
                     <div>
-                    <h2 class="ml-5">{bookcase.attributes.name}</h2>
-                        <div class = "bookshelf">
+                    <h2 className="ml-5">{bookcase.attributes.name}</h2>
+                        <div className = "bookshelf">
                             {books} <br/>
                         </div>
                 </div>

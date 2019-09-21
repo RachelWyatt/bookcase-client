@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom'
 
 const Bookcases = props => {
   if (props.bookcases.length > 1) {
-      const bookcaseCards = props.bookcases.map(b => (<li class="list-group-item"><Link to={`/bookcases/${b.id}`} >{b.attributes.name}</Link></li>))
+      const bookcaseCards = props.bookcases.map(b => (<li className="list-group-item"><Link to={`/bookcases/${b.id}`} >{b.attributes.name}</Link></li>))
       return (
         <div>
-        <h2 class="ml-5">Bookcases </h2>
-        <ul class="list-group ml-5">
+        <h2 className="ml-5">Bookcases </h2>
+        <ul className="list-group ml-5">
           {bookcaseCards}
           </ul>
         </div>
