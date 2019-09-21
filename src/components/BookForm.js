@@ -19,25 +19,25 @@ const BookForm = ({formData, history, updateBookForm, createBook, bookcaseID}) =
         <h2>Add a Book</h2>
         < form onSubmit={handleSubmit}>
             <div className="form-group row">
-                <label for="bookFormTitleInput" className="col-sm-2 col-form-label">Title</label>
+                <label htmlFor="bookFormTitleInput" className="col-sm-2 col-form-label">Title</label>
                 <div className="col-sm-6">
                     <input placeholder="Title" className="form-control" name="title" value={formData.title} type="text" onChange={handleChange}/> 
                 </div>
             </div>
             <div className="form-group row" >
-                <label for="bookFormAuthorInput" className="col-sm-2 col-form-label">Author</label>
+                <label htmlFor="bookFormAuthorInput" className="col-sm-2 col-form-label">Author</label>
                 <div className="col-sm-6">
                     <input placeholder="Author"  className="form-control" name="author" value={formData.author} type="text" onChange={handleChange}/>
                 </div>
             </div>
             <div className="form-group row" >
-                <label for="bookFormPageCountInput" className="col-sm-2 col-form-label">Page Count</label>
+                <label htmlFor="bookFormPageCountInput" className="col-sm-2 col-form-label">Page Count</label>
                 <div className="col-sm-6">
                     <input placeholder="Page count"  className="form-control"  name="pageCount" value={formData.pageCount} type="integer" onChange={handleChange}/>
                 </div>
             </div>
             <div className="form-group row" >
-                <label for="bookFormSpineColorInput" className="col-sm-2 col-form-label">Spine Color</label>
+                <label htmlFor="bookFormSpineColorInput" className="col-sm-2 col-form-label">Spine Color</label>
                 <div className="col-sm-6">
                     <input placeholder="Spine color"  className="form-control"  name="spineColor" value={formData.spineColor} type="text" onChange={handleChange}/>
                 </div>
