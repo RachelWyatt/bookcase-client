@@ -28,7 +28,6 @@ html {
   width: 80%;
   height: 100%;
   margin: 0 auto;
-  border: 10px #A87328;
   overflow: hidden;
 }
 
@@ -49,7 +48,6 @@ html {
 
 
 .book-title {
-  float: left;
   padding-left: 1em;
   font-size: 1em;
   transform-origin: left top 0;
@@ -58,7 +56,6 @@ html {
 }
 
 .book-author {
-  float: left;
   padding-left: 1em;
   font-size: 0.7em;
   transform-origin: left top 0;
