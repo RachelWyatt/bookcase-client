@@ -7,14 +7,12 @@ import * as serviceWorker from './serviceWorker';
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
-import usersReducer from './reducers/users.js'
 import myBookcases from './reducers/bookcases.js'
 import bookcaseForm from './reducers/bookcaseForm.js'
 import bookForm from './reducers/bookForm.js'
 import { BrowserRouter as Router} from 'react-router-dom'
 
 const reducer = combineReducers({
-    user: usersReducer,
     myBookcases,
     bookcaseForm,
     bookForm
