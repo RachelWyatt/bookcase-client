@@ -8,14 +8,6 @@ const BooksContainer = (props) => {
         if (page_count > 200) {
             return page_count/10 + `px`
         } else {return `40px`}
-        
-    }
-
-    const determineFontSize = (title) => {
-        if (title.length > 16) {
-            return `8pt`
-        } else {return `12pt`}
-        
     }
 
 if (props.bookcases.length > 1) {
@@ -25,7 +17,6 @@ if (props.bookcases.length > 1) {
         <div className="book " key={b.id} style={
             {backgroundColor: `#${b.spine_color}`,
             width: determineBookWidth(b.page_count),
-            fontSize: determineFontSize(b.title),
         }
             } >
             <div className="book-title">{b.title}</div>

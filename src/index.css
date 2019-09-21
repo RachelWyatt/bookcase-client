@@ -32,7 +32,7 @@ html {
 }
 
 .book {
-  height: 200px;
+  height: 300px;
   float: left;
   color: white;
   font-size: 0.9em;
@@ -52,7 +52,7 @@ html {
   font-size: 1em;
   transform-origin: left top 0;
   transform: rotate(90deg) translateY(-40px) ;
-  width: 170px;
+  width: 270px;
 }
 
 .book-author {
@@ -60,6 +60,6 @@ html {
   font-size: 0.7em;
   transform-origin: left top 0;
   transform: rotate(90deg) translateY(-15px) translateX(-20px);
-  width: 150px;
+  width: 250px;
 }
 
