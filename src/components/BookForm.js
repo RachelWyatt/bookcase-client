@@ -10,7 +10,6 @@ const BookForm = ({formData, history, updateBookForm, createBook, bookcaseID}) =
        updateBookForm(name, value)
     }
     const handleSubmit = event => {
-        console.log(bookcaseID)
         event.preventDefault()
         createBook(formData, bookcaseID, history)
     }

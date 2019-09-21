@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { List } from 'reactstrap';
+
 const Bookcases = props => {
   if (props.bookcases.length > 1) {
       const bookcaseCards = props.bookcases.map(b => (<li class="list-group-item"><Link to={`/bookcases/${b.id}`} >{b.attributes.name}</Link></li>))
