@@ -41,8 +41,8 @@ export const createBook = (formData, bookcaseID, history) => {
             if (response.error) {
                 alert(response.error)
             } else { 
-                console.log(response)
                 dispatch(addBook(response.data))
+                dispatch(resetBookForm())
                 history.push(`/bookcases/${bookcaseID}`)
         }
         })
