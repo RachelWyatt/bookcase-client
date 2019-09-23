@@ -1,10 +1,11 @@
 import React from 'react'
+import { applyMiddleware } from 'redux'
 
 const Books = (props) => {
  
     const determineBookWidth = (page_count) => {
-        if (page_count > 200) {
-            return page_count/10 + `px`
+        if (page_count > 300) {
+            return page_count/8 + `px`
         } else {return `40px`}
     }
 
@@ -14,6 +15,7 @@ const Books = (props) => {
             <div className="book " key={b.id} style={
                     {backgroundColor: `#${b.spine_color}`,
                     width: determineBookWidth(b.page_count),
+                    verticalAlign: `middle`
                     }
                 } >
                 <div className="book-title">{b.title}</div>
