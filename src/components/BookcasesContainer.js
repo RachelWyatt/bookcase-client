@@ -5,15 +5,12 @@ import BookcaseCard from './BookcaseCard.js'
 
 class Bookcases extends React.Component {
   
-
   render(){
     const bookcaseCards = this.props.bookcases.map( bookcase => <BookcaseCard bookcase={bookcase} />)
     return bookcaseCards
   }
   
 }
-
-
 
   const mapStateToProps = (state) => {
     return {
