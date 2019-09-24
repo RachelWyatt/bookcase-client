@@ -1,20 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import BookcaseCard from './BookcaseCard.js'
 
-const Bookcases = props => {
-  if (props.bookcases.length > 1) {
-      const bookcaseCards = props.bookcases.map(b => (<li className="list-group-item" key={b.id}><Link to={`/bookcases/${b.id}`} >{b.attributes.name}</Link></li>))
-      return (
-        <div>
-        <h2 className="ml-5">Bookcases </h2>
-        <ul className="list-group ml-5">
-          {bookcaseCards}
-          </ul>
-        </div>
-      )
-  } else return <p>Loading...</p>
+class Bookcases extends React.Component {
+  
+
+  render(){
+    const bookcaseCards = this.props.bookcases.map( bookcase => <BookcaseCard bookcase={bookcase} />)
+    return bookcaseCards
   }
+  
+}
+
+
 
   const mapStateToProps = (state) => {
     return {
